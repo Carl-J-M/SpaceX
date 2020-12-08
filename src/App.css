@@ -1,38 +1,74 @@
-.App {
-  text-align: center;
+* {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo {
+    max-width: 200px;
+
+}
+.logoContainer {
+
+    color: #545454;
+    position: absolute;
+    top: -5px;
+    left: -5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.flex {
+    display: flex;
+}
+.right {
+    text-align: right;
+    
+}
+.column {
+    flex-direction: column;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.row {
+    flex-direction: row;
 }
 
-.App-link {
-  color: #61dafb;
+.splashImage {
+    max-width: 40vw;
+    margin-top: 10vh;
+    margin-left: 2em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cardContainer {
+    border-radius: 0.2em;
+    margin-top: 15vh;
+    margin-left: 2vw;
+    min-width: auto;
+}
+.title {
+        font-weight: bold;
+}
+.cardSubcontainer {
+    margin-left: 3em;
+}
+.card {
+    color: #545454;
+    margin-top: 0.5em;
+    width: auto;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 0.5em;
+    padding: 1em;
+}
+.number {
+    font-size: 3em;
+    font-weight: 800;
+}
+.title {
+    margin-left: 2em;
+    font-size: 2em;
+    font-weight: 800;
+}
+.rocketID {
+    margin-top: 0.8em;
+    font-weight: 800;
 }
