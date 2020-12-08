@@ -7,6 +7,25 @@ import sort from '../assets/sort.png';
 import splashImage from '../assets/launch-home.png';
 
 class LaunchContainer extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            launches: []
+        }
+
+        this.getLaunches = this.getLaunches.bind(this);
+    }
+    componentDidMount() {
+        this.getLaunches();
+      }
+    getLaunches() {
+        fetch('https://api.spacexdata.com/v3/launches')
+        .then(res => res.json())
+        .then((data) => {
+          this.setState({ launches: data })
+        })
+        .catch(console.log)
+      }
     render() {
         return (
             <div className="flex">
@@ -18,8 +37,12 @@ class LaunchContainer extends React.Component {
                             <Button detail="Filter By Year" icon={select}/>
                             <Button detail="Sort Descending" icon={sort}/>
                         </div>
-                        <Card number="1" title="FalconSat" date="21 Mar 2007" rocketID="Falcon 1"/>
-                        <Card number="2" title="DemoSat" date="24 Mar 2006" rocketID="Falcon 1"/>
+                        
+        {
+            this.state.launches.map(launch => {
+                 return <Card number={launch.flight_number} title={launch.mission_name} date={launch.launch_date_utc} rocketID={launch.rocket.rocket_name}/>
+             })}
+
                     </div>
             </div>
         );
