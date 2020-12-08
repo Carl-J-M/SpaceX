@@ -7,7 +7,7 @@ class Logo extends React.Component {
             return (
                 <div className="flex">
                     <img src={logo} alt="Logo" className="logo"/>
-                    <h3>LAUNCHES</h3>
+                    <h3 className="logoText">LAUNCHES</h3>
                 </div>
             )
         }
