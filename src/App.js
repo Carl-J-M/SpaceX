@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <NavContainer/>
-      <LaunchContainer name="Amelia"/>
+      <LaunchContainer/>
     </div>
   );
 }
