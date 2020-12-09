@@ -4,7 +4,6 @@ import Card from '../components/Card.js';
 import Button from '../components/Button.js';
 import NavRefresh from '../components/NavRefresh.js';
 import refresh from '../assets/refresh.png';
-import select from '../assets/select.png';
 import sort from '../assets/sort.png'; 
 import splashImage from '../assets/launch-home.png';
 import Dropdown from 'react-dropdown';
@@ -52,6 +51,21 @@ class LaunchContainer extends React.Component {
             })
         }
       }
+      onChange = e => {
+        const valueSelectedByUser = parseInt(e.target.value);
+        let basicLaunches = this.state.launches;
+        let formattedLaunches = basicLaunches.map(launch => {
+          if(launch.launch_date_utc.substring(0, 4) == valueSelectedByUser){
+              return launch;
+          }
+        })
+        var filtered = formattedLaunches.filter(function (el) {
+          return el != null;
+        });
+        this.setState({
+          launches: filtered
+        })
+      }
     render() {
         return (
             <div className="flex">
@@ -62,7 +76,12 @@ class LaunchContainer extends React.Component {
                         <div className="flex row buttonContainer">
                             <NavRefresh detail="Reload Data" icon={refresh} getLaunches={this.getLaunches}/>
                             {/* <Button detail="Filter By Year" icon={select} /> */}
-                            <Dropdown options={this.state.dropdownOptions} onChange={this.filterByYear} value={this.state.defaultOption} placeholder="Select an option" />
+                            {/* <Dropdown options={this.state.dropdownOptions} onChange={this.onChange} value={this.state.defaultOption} placeholder="Select an option" /> */}
+                            <select onChange={this.onChange}>
+                              {this.state.dropdownOptions.map(year => {
+                                return <option value={year}>{year}</option>
+                              })}
+                            </select>
                             <Button detail={this.state.buttonText} icon={sort} handler={this.handler}/>
                         </div>        
         {

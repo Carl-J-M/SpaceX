@@ -41,16 +41,7 @@
     cursor: pointer;
 }
 .buttonContainer {
-    margin-left: 30em;
-}
-.Dropdown-control {
-    border: none !;
-    background-color: #215184 !important;
-    color: white !important;
-}
-
-.Dropdown-arrow {
-    /* border-color: white !important; */
+    margin-left: 35em;
 }
 .logo {
 
