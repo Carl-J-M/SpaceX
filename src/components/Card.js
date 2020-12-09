@@ -7,8 +7,6 @@ class Card extends React.Component {
             return (
                 <div className="flex row card cardMaster">
                     <div className="number">#{this.props.number}</div>
-
-                    
                     <div className="title">{this.props.title}</div>
                         <div className="flex column right cardSubcontainer">
                             <div className="date">{this.props.date.substring(0, 10)}</div>

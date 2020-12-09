@@ -11,6 +11,8 @@
     font-family: 'Brandon Grotesque';
     font-size: 12px;
     overflow-x: hidden;
+    box-sizing: border-box;
+    margin: 0px;
 }
 .buttonStandard {
     background-color:  #215184;
@@ -43,27 +45,28 @@
 .buttonContainer {
     margin-left: 35em;
 }
+.dropdown {
+    background-color:  #215184;
+    color: white;
+    border: none;
+}
 .logo {
-
     max-width: 300px;
 }
 .logoText {
     font-size: 2em;
 }
 .logoContainer {
-
     color: #545454;
     position: fixed;
     top: -5px;
     left: -5px;
 }
-
 .flex {
     display: flex;
 }
 .right {
-    text-align: right;
-    
+    text-align: right; 
 }
 .rightHand {
     position: absolute;
@@ -72,18 +75,15 @@
 .column {
     flex-direction: column;
 }
-
 .row {
     flex-direction: row;
 }
-
 .splashImage {
     position: fixed;
     max-width: 25vw;
     margin-top: 20vh;
     margin-left: 2em;
 }
-
 .cardContainer {
     border-radius: 0.2em;
     margin-top: 15vh;
@@ -133,13 +133,12 @@
     font-weight: 100 !important;
     margin-left: 6em;
 }
-
 .dropdown {
     position: relative;
     display: inline-block;
   }
   
-  .dropdown-content {
+.dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -147,4 +146,4 @@
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 12px 16px;
     z-index: 1;
-  }
+}
