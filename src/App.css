@@ -54,6 +54,7 @@
     max-width: 300px;
 }
 .logoText {
+    margin-top: 1em;
     font-size: 2em;
 }
 .logoContainer {
