@@ -7,17 +7,23 @@ import refresh from '../assets/refresh.png';
 import select from '../assets/select.png';
 import sort from '../assets/sort.png'; 
 import splashImage from '../assets/launch-home.png';
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
 
 class LaunchContainer extends React.Component {
+  
     constructor(props) {
         super(props);
         this.state = {
             launches: [],
-            buttonText: "Sort Descending"
+            buttonText: "Sort Descending",
+            dropdownOptions: [2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020],
+            defaultOption: "Filter By Year"
         }
 
         this.getLaunches = this.getLaunches.bind(this);
         this.handler = this.handler.bind(this);
+        
     }
     componentDidMount() {
         this.getLaunches();
@@ -45,10 +51,7 @@ class LaunchContainer extends React.Component {
               buttonText: "Sort Descending"
             })
         }
-
-        console.log(this.state.launches);
       }
-      
     render() {
         return (
             <div className="flex">
@@ -58,7 +61,8 @@ class LaunchContainer extends React.Component {
                     <div className="rightHand cardContainer">
                         <div className="flex row buttonContainer">
                             <NavRefresh detail="Reload Data" icon={refresh} getLaunches={this.getLaunches}/>
-                            <Button detail="Filter By Year" icon={select} />
+                            {/* <Button detail="Filter By Year" icon={select} /> */}
+                            <Dropdown options={this.state.dropdownOptions} onChange={this.filterByYear} value={this.state.defaultOption} placeholder="Select an option" />
                             <Button detail={this.state.buttonText} icon={sort} handler={this.handler}/>
                         </div>        
         {
